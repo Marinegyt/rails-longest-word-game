@@ -1,0 +1,15 @@
+<div class="p-3">
+  <h1>New Game</h1>
+  <p><%= @letters %></p>
+  <div class="input-group inline">
+    <form action="/score" method="post" data-turbo="false" class="input-group">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :letters, @letters %>
+
+      <input type="text" name="word" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2" value=<%params[:word]%>>
+      <div class="input-group-append">
+      <button class="btn btn-primary" type="submit">Play</button>
+      </div>
+    </form>
+  </div>
+</div>
